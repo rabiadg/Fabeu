@@ -201,7 +201,7 @@ var data_<?php echo $uniqId ?> = <?php echo json_encode($block->getData()) ?>;
 		"Codazon_ProductFilter/js/ajaxload":{
 			"ajaxUrl": "<?php echo $this->getUrl('productfilter/index/ajaxLoad') ?>",
 			"currentUrl": "<?php echo $this->getUrl() ?>",
-			"jsonData": <?php echo json_encode($block->getData()) ?>
+			"jsonData": <?php echo json_encode(array_merge($this->getFilterData(), ['action' => 'ajaxload'])) ?>
 		}
 	}
 }

@@ -14,7 +14,9 @@
 	$configLat = $_optionHelper->getConfig('general_section/contact_us/latitude');
 	$configLng = $_optionHelper->getConfig('general_section/contact_us/longitude');
 	$key = $_optionHelper->getConfig('general_section/contact_us/key');
-	
+?>
+<?php if($showMap): ?>
+<?php
 	if( ($configLat != '') && ($configLng != '') ){
 		$lat = $configLat; $lng = $configLng;
 	}else{
@@ -26,7 +28,6 @@
 	
 	$zoom = $_optionHelper->getConfig('general_section/contact_us/zoom');
 ?>
-<?php if($showMap): ?>
 <div id="map_canvas" style="width:750px; height:450px; border: 2px solid #3872ac;"></div>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.17&signed_in=true&key=<?php echo $key ?>"></script>
 <script type="text/javascript">

@@ -37,7 +37,7 @@ define(['jquery','owlslider','jquery-ui-modules/widget'], function($) {
                         if(typeof $link.data('loaded') === 'undefined') {
                             var mainImg = new Image();
                             self.$mainImg.addClass(config.loadingClass);
-                            $(mainImg).load(function(){
+                            $(mainImg).on('load',function(){
                                 self.$mainImg.removeClass(config.loadingClass);
                                 self.$mainImg.attr('src',mainSrc);
                                 $link.data('loaded',true);

@@ -281,7 +281,11 @@
     }
     .stock {
         margin: 0 0 3px;
-        &.available,
+        &.available{
+            .abs-csscf(green, @f_note);
+            text-transform: uppercase;
+			padding:0;
+        }
         &.unavailable {
             .abs-csscf(@main_hover_text, @f_note);
             text-transform: uppercase;

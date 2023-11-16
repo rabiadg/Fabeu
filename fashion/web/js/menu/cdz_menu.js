@@ -38,7 +38,7 @@ define([
 
             if (this.options.responsive === true) {
                 mediaCheck({
-                    media: '(max-width: 1100px)',
+                    media: '(max-width: 768px)',
                     entry: $.proxy(function () {
                         this._toggleMobileMode();
                     }, this),

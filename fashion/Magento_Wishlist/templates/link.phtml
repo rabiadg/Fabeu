@@ -11,12 +11,10 @@
 <li class="link wishlist" data-bind="scope: 'wishlist'">
     <a <?php /* @escapeNotVerified */ echo $block->getLinkAttributes() ?>><?php echo __('Wishlist') ?>
         <!-- ko if: wishlist().counter -->
-        <span data-bind="text: wishlist().counter" class="qty fb-counter"></span>
+        <span data-bind="text: wishlist().counter" class="counter qty"></span>
         <!-- /ko -->
     </a>
 </li>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
-
 <script type="text/x-magento-init">
     {
         "*": {
@@ -29,18 +27,5 @@
             }
         }
     }
-
-</script>
-<script type="text/javascript">
-    require(['jquery'], function ($) {
-        $(window).load(function () {
-            var html = $('.link.wishlist .fb-counter').text();
-            console.log(html);
-            if (html != ' ') {
-                $('.link.wishlist .fb-counter').addClass('counter')
-            }
-        });
-
-    });
 
 </script>

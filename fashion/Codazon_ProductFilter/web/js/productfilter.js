@@ -22,7 +22,7 @@ define(['jquery','jquery-ui-modules/widget'],function($){
                     self.element.addClass('hidden-xs').css('display','');
                 }
             }
-            this.$toggle.click(function(){
+            this.$toggle.on('click',function(){
                 self.element.slideToggle(100,'linear',function(){
                     self.$toggle.toggleClass('open');
                 });
@@ -40,7 +40,7 @@ define(['jquery','jquery-ui-modules/widget'],function($){
                     }
                 }
             });
-            $(config.item,self.element).click(function(){
+            $(config.item,self.element).on('click', function(){
                 var $item = $(this);
                 if(self.winwidth < config.adapt){
                     self.element.slideUp(100,'linear',function(){
@@ -49,7 +49,7 @@ define(['jquery','jquery-ui-modules/widget'],function($){
                 }
                 self.$toggle.text($item.text());
             });
-            $(window).resize(function(){
+            $(window).on('resize', function(){
                 var newwidth = window.innerWidth;
                 if ( (self.winwidth < adapt && newwidth >= adapt) || (self.winwidth >= adapt && newwidth < adapt) ){
                     prepare();

@@ -25,10 +25,10 @@
         <?php foreach ($_filters as $_filter): ?>
             <li class="item">
                 <span class="filter-label"><?php echo $block->escapeHtml(__($_filter->getName())); ?></span>
-                <span class="filter-value"><?php /* @escapeNotVerified */ echo $block->stripTags($_filter->getLabel()) ?></span>
+                <span class="filter-value"><?php /* @escapeNotVerified */ echo is_array($_filter->getLabel()) ? "" : $block->stripTags($_filter->getLabel()) ?></span>
                 <?php
                 $clearLinkUrl = $_filter->getClearLinkUrl();
-                $currentFilterName = $block->escapeHtml(__($_filter->getName())) . " " . $block->stripTags($_filter->getLabel());
+                $currentFilterName = $block->escapeHtml(__($_filter->getName())) . " " . is_array($_filter->getLabel()) ? "" : $block->stripTags($_filter->getLabel());
                 if ($clearLinkUrl):
                     ?>
                     <a class="action previous" href="<?php /* @escapeNotVerified */ echo $_filter->getRemoveUrl() ?>"
