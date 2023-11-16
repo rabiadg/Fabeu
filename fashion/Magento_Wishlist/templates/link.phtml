@@ -1,0 +1,46 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/* @var $block \Magento\Wishlist\Block\Link */
+?>
+<li class="link wishlist" data-bind="scope: 'wishlist'">
+    <a <?php /* @escapeNotVerified */ echo $block->getLinkAttributes() ?>><?php echo __('Wishlist') ?>
+        <!-- ko if: wishlist().counter -->
+        <span data-bind="text: wishlist().counter" class="qty fb-counter"></span>
+        <!-- /ko -->
+    </a>
+</li>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "wishlist": {
+                        "component": "Magento_Wishlist/js/view/wishlist"
+                    }
+                }
+            }
+        }
+    }
+
+</script>
+<script type="text/javascript">
+    require(['jquery'], function ($) {
+        $(window).load(function () {
+            var html = $('.link.wishlist .fb-counter').text();
+            console.log(html);
+            if (html != ' ') {
+                $('.link.wishlist .fb-counter').addClass('counter')
+            }
+        });
+
+    });
+
+</script>
