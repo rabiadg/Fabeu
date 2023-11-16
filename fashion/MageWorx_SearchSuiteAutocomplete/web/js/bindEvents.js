@@ -1,8 +1,3 @@
-/**
- * Copyright © 2016 MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
-
 define([
     'jquery',
     'uiComponent',
@@ -22,28 +17,18 @@ define([
             utils.limit(this, 'load', this.searchDelay); // execute 'load' after delay
 
             $(this.inputSelector)
-                .unbind('input') // unbind all magento events
+                .off('input') // unbind all magento events
                 .on('input', $.proxy(this.load, this)) // bind searchsuiteautocomplete load event
                 .on('input', $.proxy(this.searchButtonStatus, this)) // bind show/hide search button event
                 .on('focus', $.proxy(this.showPopup, this)); // bind show popup event
             $(document).on('click', $.proxy(this.hidePopup, this)); // bind hide popup event
 
-            $(document).ready($.proxy(this.load, this)); // load autocomplete data on catalogsearch page after submit search button
             $(document).ready($.proxy(this.searchButtonStatus, this));
         },
 
         load: function (event) {
             var self = this;
-			var searchField = [];
-			$(self.inputSelector).each(function(index, element) {
-				if($(this).is(':focus')){
-					searchField = $(this);
-				}
-			});
-			if(searchField.length == 0){
-				searchField = $('#search');
-			}
-            var searchText = searchField.val();
+            var searchText = $(self.inputSelector).val();
 
             if (searchText.length < self.minSearchLength) {
                 return false;
@@ -56,18 +41,9 @@ define([
         },
 
         showPopup: function (event) {
-            var self = this;
-			var searchField = [];
-			$(self.inputSelector).each(function(index, element) {
-				if($(this).is(':focus')){
-					searchField = $(this);
-				}
-			});
-			if(searchField.length == 0){
-				searchField = $('#search');
-			}	
-				
-            var searchFieldHasFocus = searchField.is(':focus') && searchField.val().length >= self.minSearchLength;
+            var self = this,
+                searchField = $(self.inputSelector),
+                searchFieldHasFocus = searchField.is(':focus') && searchField.val().length >= self.minSearchLength;
 
             registry.get('searchsuiteautocomplete_form', function (autocomplete) {
                 autocomplete.showPopup(searchFieldHasFocus);
@@ -85,10 +61,10 @@ define([
         searchButtonStatus: function (event) {
             var self = this,
                 searchField = $(self.inputSelector),
-                searchButton = $(self.searchButtonSelector),
+                searchButton = $(self.searchFormSelector + ' ' + self.searchButtonSelector),
                 searchButtonDisabled = (searchField.val().length > 0) ? false : true;
 
-            //searchButton.attr('disabled', searchButtonDisabled);
+            searchButton.attr('disabled', searchButtonDisabled);
         },
 
         spinnerShow: function () {

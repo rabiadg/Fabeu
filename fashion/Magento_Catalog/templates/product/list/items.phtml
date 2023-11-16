@@ -341,9 +341,11 @@ switch ($type = $block->getType()) {
 require(['jquery','cdz_slider'],function($){
 	if($('.related-upsell-crossell .products-<?php /* @escapeNotVerified */ echo $type; ?> .product-items').length)
 	{
+        <?php if(isset($limit)): ?>
         if(<?php echo $limit; ?> > 0){
             $('.related-upsell-crossell .products-<?php /* @escapeNotVerified */ echo $type; ?> .product-items').children().slice(<?php echo $limit ?>).detach();
         }
+        <?php endif ?>
 		$('.related-upsell-crossell .products-<?php /* @escapeNotVerified */ echo $type; ?> .product-items').addClass('owl-carousel');
 		$('.related-upsell-crossell .products-<?php /* @escapeNotVerified */ echo $type; ?> .product-items').owlCarousel({
 			items:<?php echo $itemSlider ?>,

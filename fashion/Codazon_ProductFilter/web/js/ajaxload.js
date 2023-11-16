@@ -21,7 +21,7 @@
         _currentPage: 1,
         _create: function(){
             var self = this;
-            self.element.find(self.options.trigger).click(function(){
+            self.element.find(self.options.trigger).on('click', function(){
                 self._ajaxLoadProducts();
             });
         },
@@ -46,7 +46,11 @@
                 cache: false,
                 success: function(res){
                     if(res.html)
-                        $(config.itemsWrap,self.element).append(res.html);
+                        var div = document.createElement('div');
+                        div.innerHTML = res.html;
+                        var content = $(config.itemsWrap, div);
+                        $(config.itemsWrap,self.element).append(content.children());
+                        $(div).remove();
                     if(res.last_page == self._currentPage){
                         hasLastPage = true;
                     }
@@ -57,7 +61,7 @@
                                 var $handler = $(this);
                                 if(!$handler.data('quickshop')){
                                     $handler.data('quickshop',true);
-                                    $handler.click(function(){
+                                    $handler.on('click', function(){
                                         window.qsUrl = $(this).data('href');
                                         qsModal.modal('openModal');
                                     });
@@ -75,7 +79,7 @@
                 if(!hasLastPage){
                     $trigger.show();
                 }else{
-                    $trigger.hide();
+                    self.element.find(config.trigger).hide();
                 }
             });
         }

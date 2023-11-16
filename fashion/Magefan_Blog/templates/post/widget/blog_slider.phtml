@@ -5,6 +5,18 @@ $showSlider = $block->getShowSlider();
 $height = $block->getData('thumb_height')?:280;
 $width = $block->getData('thumb_width')?:380;
 $helper = $this->helper('Magefan\Blog\Helper\Image');
+$sliderData = [
+	'nav'			=> 1,
+	'lazyLoad'		=> 1,
+	'responsive'	=> [
+		'1900'	=> ['items' => 3],
+		'1600'	=> ['items'	=> 3],
+		'768'	=> ['items'	=> 1]
+	]
+];
+$widget = ['themewidgets' => [
+    'codazon.slider' => ['sliderConfig' => $sliderData, 'noLoadedClass' => 'no-loaded']
+]];
 ?>
 
 <?php if( count($posts) > 0 ): ?>
@@ -17,12 +29,7 @@ $helper = $this->helper('Magefan\Blog\Helper\Image');
         </div>
     </div>
 	<?php $i = 0 ?>
-	<div class="post-items <?php echo ($showSlider)?'cdz-slider':''; ?>"
-		<?php if($showSlider): ?>
-			data-margin="20" data-items="3" data-items-0="1" data-items-480="2" data-items-768="2" data-items-1024="3" data-items-1280="3" data-items-1440="3"
-			
-		<?php endif; ?>
-	>
+	<div class="post-items" data-mage-init='<?= json_encode($widget) ?>'>
 	<?php foreach($posts as $item): ?>
 	<?php	
 		$url = $item->getPostUrl();
@@ -49,9 +56,4 @@ $helper = $this->helper('Magefan\Blog\Helper\Image');
 	<?php endforeach ?>
 	</div>
 </div>
-<script type="text/javascript">
-	require(['jquery'],function($){
-		$(".post-items")._buildSlider();
-	});
-</script>
 <?php endif ?>

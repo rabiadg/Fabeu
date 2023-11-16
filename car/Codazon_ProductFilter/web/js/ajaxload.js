@@ -1,7 +1,7 @@
 (function (factory) {
     if (typeof define === "function" && define.amd) {
         define([
-            "jquery",
+            "jquery",'catalogAddToCart'
         ], factory);
     } else {
         factory(jQuery);

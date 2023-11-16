@@ -32,7 +32,7 @@
                 makeMobileSlider();
                 self._sameHeightItems();
             });
-            $('.block-products-list').bind('contentUpdated',function(){
+            $('.block-products-list').on('contentUpdated',function(){
                 $(this).find('.ajax-item .show-tooltip' ).tooltip({
                     position: {
                       my: "center top-80%",
@@ -57,14 +57,14 @@
             var $backTop = $('#back-top');
             if($backTop.length){
                 $backTop.hide();
-                $(window).scroll(function() {
+                $(window).on('scroll', function() {
                     if ($(this).scrollTop() > 100) {
                         $backTop.fadeIn();
                     } else {
                         $backTop.fadeOut();
                     }
                 });
-                $('a', $backTop).click(function() {
+                $('a', $backTop).on('click', function() {
                     $('body,html').animate({
                         scrollTop: 0
                     }, 800);
@@ -84,7 +84,7 @@
                 var parentHeight = $parent.height();
                 $parent.css({minHeight:parentHeight});
 
-                $win.scroll(function(){
+                $win.on('scroll', function(){
                     if ($win.scrollTop() > threshold) {
                         $stickyMenu.addClass('active');
                     } else {
@@ -178,7 +178,7 @@
         },
         _resize: function () {
             var self = this;
-            $(window).resize(function () {
+            $(window).on('resize', function () {
                 if(typeof timeResize != 'undefined'){
                     clearTimeout(timeResize);
                 }
