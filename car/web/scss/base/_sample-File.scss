@@ -1,0 +1,70 @@
+.class-name {
+    
+  //  Break-Point
+
+  // Source mixins
+
+  //  Min-Width
+  // XX-Large devices (larger desktops, min-width: 1400px)
+  @include media-breakpoint-up(xxl) {}
+
+  // X-Large devices (large desktops, min-width: 1200px)
+  @include media-breakpoint-up(xl) {}
+
+  // X-Large devices (desktops, min-width: 992px)
+  @include media-breakpoint-up(lg) {}
+
+  // Medium devices (tablets, min-width: 768p)
+  @include media-breakpoint-up(md) {} 
+
+  // X-Small devices (portrait phones, min-width: 576px)
+  @include media-breakpoint-up(sm) {}
+
+  // No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+
+
+  // Max-Width
+  // XX-Large devices (larger desktops, max-width: 1399.98px)
+  @include media-breakpoint-down(xxl) {}
+
+  // X-Large devices (large desktops, max-width: 1199.98px)
+  @include media-breakpoint-down(xl) {}
+
+  // X-Large devices (desktops, max-width: 991.98px)
+  @include media-breakpoint-down(lg) {}
+
+  // Medium devices (tablets, max-width: 767.98px)
+  @include media-breakpoint-down(md) {}
+
+  // X-Small devices (portrait phones,max-width: 575.98px)
+  @include media-breakpoint-down(sm) {}
+
+  // No media query necessary for xs breakpoint as it's effectively `@media (max-width: 0) { ... }`
+
+
+  // Min-Width - Max-Width
+  // XX-Large devices (larger desktops, min-width: 1400px)
+  @include media-breakpoint-only(xxl) {}
+
+  // X-Large devices (large desktops, (min-width: 1200px) and (max-width: 1399.98px))
+  @include media-breakpoint-only(xl) {}
+
+  // X-Large devices (large desktops, (min-width: 1200px) and (max-width: 1399.98px))
+  @include media-breakpoint-only(lg) {}
+
+  // Medium devices (tablets, (min-width: 768px) and (max-width: 991.98px))
+  @include media-breakpoint-only(md) {}
+
+  // Small devices (landscape phones, (min-width: 576px) and (max-width: 767.98px))
+  @include media-breakpoint-only(sm) {}
+
+  // X-Small devices (portrait phones, (max-width: 575.98px))
+  @include media-breakpoint-only(xs) {}
+
+
+  // MinCreate your own Media Query
+  // Min-Width - Max-Width
+  // Medium devices -  Large devices (tablets - large desktops, (min-width: 768px) and (max-width: 1199.98px)
+  @include media-breakpoint-between(md, xl) {}
+  
+}

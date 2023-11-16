@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <account_verification_content>
+        <block type="core/template" name="email_verification" template="Magento_Sales::email/verification_content.phtml" />
+    </account_verification_content>
+</layout>

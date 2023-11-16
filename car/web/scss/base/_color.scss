@@ -1,0 +1,193 @@
+/*  Old Color Variable   */
+/*  Extra Color     */
+$sonic-silver : #7A7A7A;
+$old-moss-green : #788637;
+$mustard-yellow : #EDA505;
+$windsor-tan : #B85403;
+$platinum : #E5E5E5;
+$gainsboro : #DCDCDC;
+$gold-foil : #C89211;
+$silver-sand : #C4C4C4;
+$lemon-curry : #C99719;
+$charleston-green : #262a2e;
+$philippine-gray : #607D8B;
+$purple-taupe : #4A4444;
+$hot-magenta : #FF27CF;
+$ocean-green : #57BEA3;
+$coral-red : #FD3B3B;
+$gray : #7B7B7B;
+$yellow-sun : #FFF61C;
+$dark-sky-blue : #96B5D4;
+$rusty-red-color : #DE244A;
+$dark-charcoal-color : #303030;
+$graycol:        #808080;
+$lightgraycol:   #B5BABE;
+$darkgraycol:    #707070;
+$lightbluecol:   #0070C0;
+$darkbluebg:     #002D5B;
+$lightgraybg:    #F8F8F8;
+$innerblackcol:  #092340;
+$innergreencol:  #22AE50;
+$innerbluecol:   #0F70B8;
+$darkpara:       #072340;
+$greencol:       #93C952;
+$textcol:        #818180;
+$grayborder:     #E3E3E3;
+$graybox:        #F9F9F9;
+$blueborder:     #22ABE2;
+$bluebg : #0A9DCC;
+$lightGrey : #9c9c9c;
+$darkGrey : #DBE2E5;
+$darkGreenbg : #112835;
+$yellowCol : #ffb43c;
+$lightBlack : #0D1A22;
+$buttonCol : #0C80C1;
+$textBlue : #0C85CA;
+$lightBlue : #149ECC;
+$darkGreen : #153040;
+$blue-ncs : #0C80C1;
+$gold-foil : #C89211;
+$silver-sand : #C4C4C4;
+$charleston-green : #262a2e;
+$purple-taupe : #4A4444;
+$rich-electric-blue : #0C85CA;
+$eerie-black : #0D1A22;
+$upsdell-red : #AA202C;
+$quartz : #4D4C4E;
+$quick-silver : #A6A6A6;
+$dark-charcoal : #2f2b2d;
+$venetian-red : #2D4A75;
+$yInmn-blue : #275885;
+$rackley : #5991AE;
+$light-blue : #B1D4E0;
+$royal-blue : #495CE1;
+$cobalt-blue : #004AAD;
+$deep-lilac : #8C52CC;
+
+$tiger-eye : #E18B31;
+$royal-orange : #FF914D;
+$dark-lavender : #754E9A;
+$beer : #F3931F;
+/*  $primary-color , $theme-color  */
+$gunmetal : #2C3033;
+$dark-liver : #4D4D4D;
+$chinese-silver : #CCCCCC;
+$platinum : #E5E5E5;
+
+$color-one : #FE0000;
+$color-two : #048204;
+$color-three : #040205;
+$color-four : #FCFEFB;
+
+// Core Colors
+
+/* Working Variable */
+
+/*  Basic Color for Every Project */
+
+/* Working Variable */
+$black                          : #000000;                  /*  $theme-color-third */
+$white                          : #FFFFFF;                  /* $theme-color-second  */
+
+
+/*  Client Color*/
+$dark-charcoal      :   #333333;
+$moonstone          :   #2e95b4;
+$dark-turquoise     : #00d4d7;
+// background: linear-gradient(42.53deg, #F3931F 39.14%, #FEA841 79.5%);
+
+
+
+// transparent colors
+// $lightblue-transparent : #0070c0d4;
+// $white-transparent : #fffffff8;
+
+// $theme-base-font-color : $black-color;
+
+
+// $theme-color : #1290a6;
+// $charleston-green : #262a2e;
+// $purple-taupe : #4A4444;
+
+// $theme-color-second : #{$white-color} !default;
+// $theme-color-forth : #{$charleston-green} !default;
+// $theme-color-six : #{$purple-taupe} !default;
+// $primary-txt-color : #{$theme-color-second}; // #FFFFFF
+
+
+// Social Media Brands Colors
+$facebook-brand                 : #4267B2;
+$twitter-brand                  : #1DA1F2;
+$instagram-brand                : #FD1D1D;
+$space-cadet                    : #262F56;
+$dark-jungle-green              :#171A27;
+
+
+$primary-color                      : $dark-turquoise;              /*  #F3931F     */
+$theme-color                        : $dark-turquoise;              /*  #F3931F     */
+$secondarycol                       : $white !default;              /*  #FFFFFF     */
+
+$theme-color-second             : $white !default;              /*  #FFFFFF     */
+$theme-color-third                : $black !default;              /*  #000000     */
+$theme-color-default             : #{$dark-turquoise} !default;
+$theme-color-hover               : #{$dark-turquoise} !default;
+$theme-color-forth                : #{$moonstone} !default;
+$theme-color-fifth                 : #{$dark-charcoal } !default;
+$theme-color-six                : #{$chinese-silver } !default;
+$theme-color-seven          : #{$platinum} !default;
+$theme-color-eight          : #{$ocean-green} !default;
+$theme-color-nine           : #{$coral-red} !default;
+$theme-color-ten            : #{$gray} !default;
+$theme-color-eleven         : #{$yellow-sun} !default;
+$theme-color-twelve         : $gainsboro !default;          /*  #DCDCDC     */
+
+//  New Main Color Palette
+$snow              :   #fbfafa;             /*remaining, but it it belong to white*/
+$fresh-air         :   #abe9ff;             /*Option send*/
+$maya-blue      :   #60ceff;            /*Option send*/
+$cobalt-blue     :   #0056ad;       /* Already used */
+$oxford-blue    :   #021652;        /* Already used */
+
+
+//  New Secondary Color Palette
+$seashell           : #fcf6f2;
+$gold-crayola    :  #ebb18f;
+$deer                :  #b77a58;
+$liver-dogs        : #5d361d;
+$raisin-black      : #29201b;
+
+
+//  Color Code Variable Assign
+$nw-primary-color       :   $cobalt-blue;
+$nw-secondary-color   :   $oxford-blue;
+$nw-third-color           :   $fresh-air;
+$nw-forth-color           :   $deer;
+$nw-fifth-color            :   $liver-dogs;
+$nw-six-color              :    $raisin-black ;
+$nw-seven-color          :    $gold-crayola;
+$nw-eight-color          :    $snow;
+
+$header-top-bar-bg              : $nw-primary-color ;
+$header-bottom-bar-bg        : $nw-secondary-color ;
+$cart-count-box-bg-color      : $nw-secondary-color;
+$search-box-bg                     : $nw-primary-color ;
+$menu-bg-border-color         : $nw-secondary-color;
+$menu-link-hover-color         : $nw-primary-color;
+
+$theme-heading-color           :    $nw-primary-color;
+$theme-txt-color                   :    $nw-primary-color;
+$theme-tag-bg-color             :    $nw-secondary-color;
+
+
+$theme-link-color                   :    $theme-color-ten;
+$theme-link-hcolor                 :    $nw-primary-color;
+
+$theme-rating-icon-color        :    $nw-secondary-color;
+
+$theme-txt-color                    :    $theme-color-ten;
+
+$theme-button-bg-color          :   $nw-secondary-color;
+$theme-button-bg-hcolor        :   $nw-primary-color;
+
+$slider-button-bg-color         :   $nw-secondary-color;
+$slider-pagination-color        :   $nw-secondary-color;

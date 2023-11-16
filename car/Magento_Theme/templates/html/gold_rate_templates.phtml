@@ -1,0 +1,393 @@
+<?php
+function getRate($endpoint, $base = 'AED', $symbol = null)
+{
+    //$endpoint = 'carat';
+    //$access_key = 'ptv30pb53a7188u8e6g28u33flcj61nynzvibr78q5cuqststcb6lsdc02v3';
+    //$access_key = '2uc2flg68sq00uh74rk24wn5112oa121o142d2a4v0g7acjbqm506knc4rqw';
+    //$access_key = 'cca0wvc31a95xuque6x1u3m8b85nhvduodqc80ws63frpnz5f8wq3d852w6n';
+    //$access_key = 'k8ynvgpdgmea02ie7mwz880t7gxotc0ji7a17nwf4dmhh2w7h2gobl0awikj';
+    $access_key = 's23hyk0y9ox6f2y5nx01nahos5m4e0293lxqmvsseltigxicdo9g6ko8w2z5';
+    //$base = 'AED';
+    if ($symbol == null) {
+        $url = 'https://metals-api.com/api/' . $endpoint . '?access_key=' . $access_key . '&base=' . $base;
+    } else {
+        $url = 'https://metals-api.com/api/' . $endpoint . '?access_key=' . $access_key . '&base=' . $base . '&symbols=' . $symbol;
+
+    }
+//echo $url;die('call');
+// Initialize CURL:
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+// Store the data:
+    $json = curl_exec($ch);
+    if (curl_errno($ch)) {
+        $error_msg = curl_error($ch);
+    }
+    curl_close($ch);
+
+
+// Decode JSON response:
+    $exchangeRates = json_decode($json, true);
+    return $exchangeRates;
+}
+
+//echo '<pre>';print_r(getRate('latest','AED','') );echo '</pre>';die('call');
+function getCurrenciesRate($base='AED')
+{
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => "https://api.apilayer.com/exchangerates_data/latest?symbols=INR%2CPKR%2CUSD%2CEUR%2CGBP%2CCHF&base=" . $base,
+        CURLOPT_HTTPHEADER => array(
+            "Content-Type: text/plain",
+            "apikey: 0R30ylwXc4R4lsRXqrX8714XcIBQHzGU"
+        ),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "GET"
+    ));
+
+    $response = curl_exec($curl);
+    if (curl_errno($curl)) {
+        $error_msg = curl_error($curl);
+    }
+    curl_close($curl);
+    $responseDecode = json_decode($response, true);
+    return $responseDecode;
+}
+//echo '<pre>';print_r(isset($rate['success']));echo '</pre>';die('call');
+/*if(isset($exchangeRates['rates']['Carat '.$_GET['carat'].''])){
+    */ ?><!--
+    <h3>Carat <? /*= $_GET['carat'] */ ?>: <? /*= $exchangeRates['rates']['Carat '.$_GET['carat'].'']*5 */ ?></h3>
+--><?php
+/*}else{*/
+?>
+
+<div class="row">
+    <?php
+    $goldRates = getRate('carat');
+    ?>
+    <div class="col-md-6">
+        <img src="https://dev.fabeu.com/admin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9Ind5c2l3eWcvZ29sZC1yYXRlLWJhbm5lci9mYWJldS5jb20tMzAwWDkwMC5qcGVnIn19/key/063544d4eb8b201f4a905c0933b954a2ceaffc5578d5cfb2150951e5a9753fd4/"
+             width="100%" height="100%" alt=""/>
+    </div>
+    <?php
+    if ($goldRates['success']) { ?>
+        <div class="col-md-12">
+            <!-- -->
+            <div class="item-rate-listing">
+                <h3>UAE Gold Rates (AED)</h3>
+                <p class="date-box"><?= date('M d, Y', $goldRates['timestamp']) ?></p>
+                <table class="table abs-table-striped">
+                    <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th style="width: 32%">Rates Per Gram</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>24k</td>
+                        <td><?= round($goldRates['rates']['Carat 24K']*5,2) ?></td>
+                    </tr>
+                    <tr>
+                        <td>22k</td>
+                        <td><?= round($goldRates['rates']['Carat 22K']*5,2) ?></td>
+                    </tr>
+                    <tr>
+                        <td>18k</td>
+                        <td><?= round($goldRates['rates']['Carat 18K']*5,2) ?></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- -->
+            <!-- -->
+            <div class="item-rate-listing">
+                <?php
+                $silverRatesInAED = getRate('latest', 'AED', 'XAG');
+                $silverRatesinUSD = getRate('latest', 'USD', 'XAG');
+                ?>
+                <h3>UAE Silver Rates (AED)</h3>
+                <p class="date-box"><?= date('M d, Y', $silverRatesInAED['timestamp']) ?></p>
+                <table class="table abs-table-striped">
+                    <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Rate</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>In Grams (AED)</td>
+                        <td><?= round(($silverRatesInAED['rates']['XAG'] / 31.1),2)  ?></td>
+                    </tr>
+                    <tr>
+                        <td>In Grams (USD)</td>
+                        <td><?= round(($silverRatesinUSD['rates']['XAG'] / 31.1),2)  ?></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- -->
+            <!-- -->
+            <div class="item-rate-listing">
+                <?php
+                $platinumRatesInAED = getRate('latest', 'AED', 'XPT');
+                ?>
+                <h3>UAE Platinum Rates (AED)</h3>
+                <p class="date-box"><?= date('M d, Y', $platinumRatesInAED['timestamp']) ?></p>
+                <table class="table abs-table-striped">
+                    <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th style="width: 32%">Rate</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1 Gram</td>
+                        <td><?= round($platinumRatesInAED['rates']['XPT'] / 31.1,2) ?></td>
+                    </tr>
+                    <tr>
+                        <td>4 Grams</td>
+                        <td><?= round(($platinumRatesInAED['rates']['XPT'] / 31.1) * 4,2) ?></td>
+                    </tr>
+                    <tr>
+                        <td>8 Grams</td>
+                        <td><?= round(($platinumRatesInAED['rates']['XPT'] / 31.1) * 8,2) ?></td>
+                    </tr>
+                    <tr>
+                        <td>10 Grams</td>
+                        <td><?= round(($platinumRatesInAED['rates']['XPT'] / 31.1) * 10,2) ?></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- -->
+            <!-- -->
+            <!-- <div class="item-rate-listing">
+                               <?php
+            /*                    $copperRatesInAED = getRate('latest', 'AED', 'XCU');
+                                */ ?>
+                               <h3>UAE Copper Rates (AED)</h3>
+                               <p class="date-box"><? /*= date('M d, Y', $copperRatesInAED['timestamp']) */ ?></p>
+                               <table class="table abs-table-striped">
+                                   <thead>
+                                   <tr>
+                                       <th>Month</th>
+                                       <th>Price</th>
+                                       <th>Changes</th>
+                                   </tr>
+                                   </thead>
+                                   <tbody>
+                                   <tr>
+                                       <td>Dec 2019</td>
+                                       <td>22,318.00</td>
+                                       <td>3.70%</td>
+                                   </tr>
+                                   <tr>
+                                       <td>Jan 2020</td>
+                                       <td>22,149.62</td>
+                                       <td>-0.75%</td>
+                                   </tr>
+                                   <tr>
+                                       <td>Feb 2020</td>
+                                       <td>20,888.26</td>
+                                       <td>-5.69%</td>
+                                   </tr>
+                                   <tr>
+                                       <td>Mar 2020</td>
+                                       <td>19,033.21</td>
+                                       <td>-8.88%</td>
+                                   </tr>
+                                   </tbody>
+                               </table>
+                           </div>-->
+            <!-- -->
+            <!-- -->
+            <div class="item-rate-listing">
+                <?php
+                $currenciesUSD = getCurrenciesRate('USD');
+                //echo '<pre>';print_r($currenciesUSD['rates'] );echo '</pre>';die('call');
+                if (isset($currenciesUSD['success'])) {
+                    ?>
+                    <h3>Currency rates against AED</h3>
+                    <p class="date-box"><?= date('M d, Y', $currenciesUSD['timestamp']) ?></p>
+                    <table class="table abs-table-striped">
+                        <thead>
+                        <tr>
+                            <th>Currencies</th>
+                            <th>UAE</th>
+                            <th>Qatar</th>
+                            <th>Oman</th>
+                        </tr>
+                        <!-- <tr>
+                             <th></th>
+                             <th>
+                                 <div class="tb-full-width">
+                                     <div class="half-box">Buy</div>
+                                     <div class="half-box">Sell</div>
+                                 </div>
+                             </th>
+                             <th>
+                                 <div class="tb-full-width">
+                                     <div class="half-box">Buy</div>
+                                     <div class="half-box">Sell</div>
+                                 </div>
+                             </th>
+                             <th>
+                                 <div class="tb-full-width">
+                                     <div class="half-box">Buy</div>
+                                     <div class="half-box">Sell</div>
+                                 </div>
+                             </th>
+                         </tr>-->
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>INR</td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('AED')['rates']['INR'],2) ?></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('QAR')['rates']['INR'],2) ?></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('OMR')['rates']['INR'],2) ?></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PKR</td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('AED')['rates']['PKR'],2) ?></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('QAR')['rates']['PKR'],2) ?></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('OMR')['rates']['PKR'],2) ?></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>US Dollar</td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('AED')['rates']['USD'],2) ?></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('QAR')['rates']['USD'],2) ?></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('OMR')['rates']['USD'],2) ?></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Euro</td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('AED')['rates']['EUR'],2) ?></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('QAR')['rates']['EUR'],2) ?></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('OMR')['rates']['EUR'],2) ?></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>GB Sterling</td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('AED')['rates']['GBP'],2) ?></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('QAR')['rates']['GBP'],2) ?></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('OMR')['rates']['GBP'],2) ?></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Swiss Franc</td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('AED')['rates']['CHF'],2) ?></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('QAR')['rates']['CHF'],2) ?></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-full-width">
+                                    <div class="half-box"><?= round(getCurrenciesRate('OMR')['rates']['CHF'],2) ?></div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                <?php } ?>
+            </div>
+            <!-- -->
+        </div>
+    <?php } else { ?>
+        <div class="col-md-12">
+            <!-- -->
+            <div class="item-rate-listing">
+                <p style="text-align: center">We are trying to fetch the latest rates, please check back later</p>
+            </div>
+        </div>
+    <?php } ?>
+    <div class="col-md-6">
+        <img src="https://dev.fabeu.com/admin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9Ind5c2l3eWcvZ29sZC1yYXRlLWJhbm5lci9mYWJldS5jb20tMzAwWDkwMC5qcGVnIn19/key/063544d4eb8b201f4a905c0933b954a2ceaffc5578d5cfb2150951e5a9753fd4/"
+             width="100%" height="100%" alt=""/>
+    </div>
+
+</div>
+<?php
+//}
+?>
+<!--<table border="1" >
+    <tbody>
+    <?php /*foreach (array_slice($exchangeRates['rates'],0,4) as $key=>$rate): */ ?>
+    <tr>
+        <td><? /*= $key */ ?></td>
+        <td><? /*= $rate */ ?></td>
+    </tr>
+   <?php /*endforeach; */ ?>
+    </tbody>
+</table>-->

@@ -1,0 +1,221 @@
+header {
+    background-color: #00d4d7;
+    width: 100%;
+    padding: em(0)!important;
+    // position: fixed;
+    // top: 0;
+    // #{$th-direction}: 0;
+    // z-index: 2;
+    transition: all 0.4s ease;
+    height: em(65);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+
+    @media (min-width: 768px) {
+        padding: em(35) 0;
+    }
+    
+    .logo {
+        width: em(110)!important;
+        height: em(35) !important;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        @media (min-width : 768px) {
+            // width: em(228);
+            // height: em(31);
+        }
+    }
+    nav {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                margin-#{$th-direction}: em(20);
+                @media (max-width: 1080px) {
+                    margin-#{$th-direction}: em(25);
+                }
+                @media (max-width: 768px) {
+                    margin-#{$th-direction}: em(25);
+                    &:nth-child(2) {
+                        margin-#{$th-direction}: 0;
+                    }
+                }
+                &:only-child,
+                &:first-child {
+                    margin-#{$th-direction}: em(0);
+                }
+                &.header-btn {
+                    @media (max-width: 800px) {
+                        display: none;
+                        visibility: hidden;
+                    }
+                }
+            }
+            .tel-btn {
+                display: flex;
+                flex-wrap: wrap;
+                height: 100%;
+                a {
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding-#{$th-direction}: em(35);
+                    font-size: em(16);
+                    @media (max-width : 768px) {
+                        padding-#{$th-direction}: 35px;
+                    }
+                }
+                i {
+                    margin-#{$th-opdirection}: em(10);
+                    display: flex;
+                    flex-wrap: wrap;
+                    position: absolute;
+                    #{$th-direction}: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: em(24);
+                    @media (max-width: 1200px) {
+                        font-size: em(24);
+                    }
+                    @media (max-width: 1024px) {
+                        font-size: em(24);
+                    }
+                }
+                span {
+                    display: flex;
+                    flex-wrap: wrap;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: em(16);
+                    // line-height: 45px;
+                    line-height: em(30);
+                    letter-spacing: 0.5px;
+                    color: #{$primary-txt-color};
+                    @media (max-width: 768px) {
+                        font-size: em(13);
+                    }
+                }
+            }
+        }
+    }
+
+    &.fixed-header {
+        position: fixed;
+        top: 0;
+        #{$th-direction}: 0;
+        width: 100%;
+        // background: #FFF;
+
+        // position: fixed;
+        background: #dc2250;
+        background: -moz-linear-gradient(left, #dc2250 0, #9b277c 50%);
+        background: -webkit-linear-gradient(left, #dc2250 0, #9b277c 50%);
+        background: linear-gradient(to right, #dc2250 0, #9b277c 50%);
+        box-shadow: 0 5px 8px 0 rgb(0 0 0 / 15%);
+        // padding: 1em 0;
+
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+
+        .header-inner {
+            .dk-logo {
+                .normal-logo {
+                    display: none;
+                    visibility: hidden;
+                }
+
+                .fixed-logo {
+                    display: flex;
+                    visibility: visible;
+                    width: 100%;
+                }
+            }
+
+            .mobile-logo {
+                display: none;
+                visibility: hidden;
+
+                .normal-logo {
+                    display: flex;
+                    visibility: visible;
+                }
+
+                .fixed-logo {
+                    display: none;
+                    visibility: hidden;
+                }
+
+                @media (max-width : 768px) {
+                    display: flex;
+                    visibility: visible;
+
+                    .normal-logo {
+                        display: none;
+                        visibility: hidden;
+                    }
+
+                    .fixed-logo {
+                        display: flex;
+                        visibility: visible;
+                    }
+                }
+            }
+
+            a {
+                &.txt-link {
+                    &.primary-txt {
+                        &.style-one {
+                            i {
+                                color: #FFF;
+                            }
+                            span {
+                                color: #FFF;
+                            }
+                        }
+                    }
+                }                
+                &.txt-link {                    
+                    &.primary-txt {
+                        &.style-one {
+                            &:hover {
+                                i {
+                                    color: #000 !important;
+                                }
+                                span {
+                                    color: #000!important;
+                                }
+                                &::before {
+                                    background: #000 !important;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+        
+    }
+    &.visible-title {
+        visibility: visible;
+    }
+
+    @media (max-width : 1600px) {}
+    @media (max-width : 1366px) {}
+    @media (max-width : 1480px) {}
+    @media (max-width : 1280px) {}
+    @media (min-width : 991px) {
+        // position: absolute;
+        // top: 0;
+        // #{$th-direction}: 0;
+        // z-index: 2;
+    }
+    @media (max-width : 991px) {}
+    @media (max-width : 768px) {}
+    @media (max-width : 480px) {}
+}

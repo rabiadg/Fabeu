@@ -1,0 +1,8 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$cmsPage = $objectManager->get('\Magento\Cms\Model\Page');
+
+echo $this->getLayout()
+->createBlock('Magento\Cms\Block\Block')
+->setBlockId($cmsPage->getCustomContent())
+->toHtml();

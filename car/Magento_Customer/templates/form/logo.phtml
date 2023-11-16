@@ -1,0 +1,16 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$block = $objectManager->get('\Magento\Theme\Block\Html\Header\Logo');
+$storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();
+$src = $block->getLogoSrc();
+$src = str_replace('logo.svg', 'logo-black.svg', $block->getLogoSrc());
+
+?>
+<a class="logo" href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
+    <img class="main-logo" src="<?php /* @escapeNotVerified */ echo $src ?>"
+         alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?>"
+         <?php echo $block->getLogoWidth() ? 'width="' . $block->getLogoWidth() . '"' : '' ?>
+         <?php echo $block->getLogoHeight() ? 'height="' . $block->getLogoHeight() . '"' : '' ?>
+    />
+</a>
+

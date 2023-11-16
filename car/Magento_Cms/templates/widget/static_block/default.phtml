@@ -1,0 +1,25 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/* @var $block \Magento\Cms\Block\Widget\Block */
+?>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$cmsPage = $objectManager->get('\Magento\Cms\Model\Page');
+
+?>
+<!--<style>
+   /* .cms-page-links{
+        display: none;
+    }
+    .cms-page-view .sidebar-additional #page-<?/*= $cmsPage->getCustomContent(); */?> {
+        display: block;
+    }*/
+
+</style>-->
+<div class="widget block block-static-block mpblock" id="cms-block-<?= $block->getBlockId() ?>">
+    <?= /* @noEscape */ $block->getText() ?>
+</div>

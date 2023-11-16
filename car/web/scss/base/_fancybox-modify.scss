@@ -1,0 +1,37 @@
+.fancybox-content {
+    width: 95%;
+    max-width:500px;
+    font-family: $primary-font;
+    background: #{$form-box-bg};
+    border-radius: 10px;
+    margin-top: 40px;
+    padding: 40px 50px;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+    overflow: hidden;
+    @media (min-width : 991px) {}
+    @media (max-width : 768px) {
+        padding: 40px 25px;
+    }
+    .fancybox-button {
+        svg {
+            path {
+                fill: #{$theme-color-second};
+            }
+        }
+    }
+
+    form {
+        fieldset {
+            padding: 0;
+            border-radius: 0;
+            margin-top: 0;
+            max-width: 100%;
+        }
+        h3 {
+            margin-bottom: 25px;
+        }
+    }
+}

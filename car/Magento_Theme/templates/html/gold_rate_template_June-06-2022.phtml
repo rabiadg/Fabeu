@@ -1,0 +1,38 @@
+<?php
+
+$endpoint = 'carat';
+$access_key = 'ptv30pb53a7188u8e6g28u33flcj61nynzvibr78q5cuqststcb6lsdc02v3';
+$base='AED';
+$url='https://metals-api.com/api/'.$endpoint.'?access_key='.$access_key.'&base='.$base;
+//echo $url;die('call');
+// Initialize CURL:
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+// Store the data:
+$json = curl_exec($ch);
+if (curl_errno($ch)) {
+    $error_msg = curl_error($ch);
+}
+curl_close($ch);
+
+
+// Decode JSON response:
+$exchangeRates = json_decode($json, true);
+
+if(isset($exchangeRates['rates']['Carat '.$_GET['carat'].''])){
+    ?>
+    <h3>Carat <?= $_GET['carat'] ?>: <?= $exchangeRates['rates']['Carat '.$_GET['carat'].'']*5 ?></h3>
+<?php
+}
+?>
+<!--<table border="1" >
+    <tbody>
+    <?php /*foreach (array_slice($exchangeRates['rates'],0,4) as $key=>$rate): */?>
+    <tr>
+        <td><?/*= $key */?></td>
+        <td><?/*= $rate */?></td>
+    </tr>
+   <?php /*endforeach; */?>
+    </tbody>
+</table>-->

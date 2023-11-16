@@ -1,0 +1,238 @@
+body {
+    &.marketplace-account-login {
+        &.page-layout-seller-login {
+            .wk-mp-page-wrapper {
+                // padding: 60px 161px!important;
+                // height: auto;
+                flex-wrap: wrap;
+                flex-direction: row;
+                align-content: center;               
+                @media (min-width: 768px) {
+                    width: 520px;
+                    margin: 0 auto!important;
+                    padding: 0em 11em!important;
+                }
+                @media (min-width: 1381px) {
+                    padding: 5em 20em!important;
+                }
+                @media (min-width: 1281px) and (max-width: 1380px) {
+                    padding: 5em 11em;
+                }
+                @media (min-width: 1200px) {
+                    padding: 5em 11em!important;
+                }                
+                @media (max-width: 660px) {
+                    padding: 0!important;
+                    width: 90%!important;
+                    margin: 0 auto!important;
+                }
+            }
+            .wk-mp-login-header {
+                .logo {
+                    max-width: 130px;
+                }
+            }
+            .wk-mp-login-content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                flex-direction: column;
+                margin: 0 auto;
+                // width: 100%;
+                @media (min-width: 1400px) {
+                    max-width: 420px;
+                }
+                @media (max-width: 1199px) {
+                    max-width: 540px;
+                }
+            }
+            .wk-mp-login-container {
+                width: 100%;
+                padding: 30px;
+                max-width: 540px;
+                margin: 0 auto;
+                @media (min-width: 1200px) {
+                    padding: 30px 0;
+                }
+                @media (min-width: 768px) {
+                    max-width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+                form {
+                    width: 100%;
+                }
+                .block-title {
+                    display: block;
+                    font: 500 24px/1.35 Roboto, Helvetica Neue, Verdana, Arial, sans-serif;
+                    border-width: 0;
+                    text-align: center;
+                    // padding-bottom: 15px;
+                    strong {
+                        padding: 0;
+                        border-width: 0;
+                        font: 500 24px/1.35 Roboto, Helvetica Neue, Verdana, Arial, sans-serif;
+                        color: #282828;
+                        // text-transform: uppercase;
+                    }
+                }
+                .fieldset {
+                    // padding: 0 30px 0px!important;
+                    .field {
+                        &.note {
+                            font: 400 12px/1.35 Roboto, Helvetica Neue, Verdana, Arial, sans-serif;
+                            text-transform: initial;
+                            font-size: 12px!important;
+                            text-align: center;
+                            margin-bottom: 45px!important;
+                        }
+                    }
+                    .form-actions {
+                        text-align: center;
+                        button {
+                            margin-bottom: 13px;
+                            text-transform: unset;
+                        }
+                    }
+                    .label {
+                        display: none;
+                        visibility: hidden;
+                    }
+                }
+            }
+            .block-new-customer {
+                padding: 0 30px;
+                @media (min-width: 768px) {
+                    width: 100%;
+                }
+                .block-title {
+                    display: block;
+                    font: 500 24px/1.35 Roboto, Helvetica Neue, Verdana, Arial, sans-serif;
+                    border-width: 0;
+                    text-align: center;
+                    // padding-bottom: 15px;
+                    strong {
+                        padding: 0;
+                        border-width: 0;
+                        font: 500 24px/1.35 Roboto, Helvetica Neue, Verdana, Arial, sans-serif;
+                        color: #282828;
+                        text-transform: unset;
+                    }
+                }
+                .block-content {
+                    p {
+                        // font: 400 12px/1.35 Roboto, Helvetica Neue, Verdana, Arial, sans-serif;
+                        // text-transform: initial;
+                        // font-size: 12px!important;
+                        // text-align: center;
+                    }
+                    .actions-toolbar {
+                        .primary {
+                            justify-content: center;
+                            display: flex;
+                            a {
+                                text-transform: unset;
+                                width: auto;
+                            }
+                            button {
+                                width: auto;
+                            }
+                        }
+                    }
+                }
+            }
+            .wk-mp-login-footer {
+                // position: absolute!important;
+                // top: 93%!important;
+                // left: 0;
+                // margin: 0 auto!important;
+                // width: 100%!important;
+                .copyright {
+                    @media (min-width: 1400px) {
+                        width: 100%!important;
+                        max-width: 420px;
+                    }
+                    @media (min-width: 768px) and (max-width: 1399px) {
+                        width: 100%!important;
+                    }
+                }
+            }
+        }
+    }
+    &.customer-account-login {
+        .login-container {
+            margin: 0 auto!important;
+            .block {
+                &.block-new-customer {
+                    max-width: 540px;
+                    padding: 0 30px;
+                    .block-content {
+                        .actions-toolbar {
+                            .primary {
+                                display: flex;
+                                justify-content: center;
+                            }
+                            a {
+                                &.primary {
+                                    width: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @media (min-width: 1381px) {
+                padding: 5em 11em;
+            }
+            @media (min-width: 1200px) {
+                padding: 2em 11em!important;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+            }
+            @media (max-width: 1199px) {
+                max-width: 540px;
+            }
+            .logo {
+                max-width: 130px;
+            }
+        }
+        .fieldset {
+            .actions-toolbar {
+                flex-direction: column;
+                align-items: center;
+                .primary {
+                    justify-content: center;
+                    display: flex;
+                    button {
+                        width: auto;
+                    }
+                }
+            }
+        }
+        .page-main {
+            .block-customer-login {
+                @media (min-width: 1400px) {
+                    width: 100%;
+                    max-width: 420px;
+                }
+                @media (min-width: 1200px) {
+                    padding: 30px 0;
+                    margin-bottom: 0;
+                }
+                .block-content {
+                    @media (min-width: 1200px)  {
+                        padding: 30px 0 0;
+                    }
+                    @media (max-width: 1199px) {
+                        padding: 30px 20px;
+                    }
+                    @media (max-width: 767px) {
+                        padding: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

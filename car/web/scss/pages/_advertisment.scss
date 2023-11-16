@@ -1,0 +1,67 @@
+.maagebees-add {
+    margin-bottom: 40px;
+    .mageb-patn-inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .mageb-patterns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        li {
+            @media (min-width : 481px) {
+                margin : 0;
+            }
+        }
+        .mageb-effects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            a {
+                display: flex;
+                // width: 100%;
+                flex-wrap: wrap;
+                overflow: hidden;
+                img {
+                    // width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        &.mageb-pattern2 {
+            width: 100%;
+            max-width: 95%;
+        }
+    }
+}
+
+.cdz-menu {
+    &.cdz-horizontal-menu {
+        .maagebees-add {
+            margin-bottom: 0px;
+            .mageb-patn-inner {
+            }
+            .mageb-patterns {
+                justify-content: space-between;
+                li {
+                    @media (min-width : 481px) {}
+                }
+            }
+        }
+    }
+}
+
+.groupmenu-drop {
+    .maagebees-add {
+        .mageb-patterns {
+            &.mageb-pattern2 {
+                max-width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,562 @@
+// button {
+//   -webkit-appearance: button;
+//   width: auto;
+//   border: 0;
+//   box-shadow: none;
+//   background: transparent;
+//   outline: 0;
+//   background: 0 0;
+//   border-radius: 0;
+//   cursor: pointer;
+//   &:focus {
+//     outline: none;
+//   }
+// }
+
+
+.primary-btn {
+  // color: $whitecol;
+  // background-color: $greencol;
+
+  // display: inline-block;
+  // font-size: em(15);
+  // font-weight: 500;
+  // text-decoration: none;
+  // border: none;
+  // text-transform: uppercase;
+  // padding: 0.66em 2.5em;
+  // transition: all 0.3s ease-in-out;
+  // position: relative;
+  // overflow: hidden;
+  // z-index: 1;
+
+  &::before {
+    // content: "";
+    // position: absolute;
+    // z-index: -1;
+    // // background: $secondarycol;
+    // height: 10em;
+    // width: 15.3em;
+    // border-radius: 50%;
+    // top: 100%;
+    // #{$th-direction}: 100%;
+    // transition: all .7s;
+  }
+
+  &:hover {
+    // background: $primarycol;
+    
+    // box-shadow: 0 3px 3px -2px rgba(0,0,0,0.5);
+    // cursor: pointer;
+
+  }
+
+  &:hover::before {
+    // top: -2em;
+    // #{$th-direction}: -2em;
+  }
+  
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+
+  &--primary {
+    padding: 0 em(23);
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #{$primary-btn-txt-color};
+    border-radius: em(33);
+    &::before {
+      // content : '' ;
+      // background-color: #{$primary-btn-bg-color};
+      // width: 100%;
+      // height: 100%;
+      // position: absolute;
+      // #{$th-direction}: 0;
+      // top: 0;
+      // z-index: -1;
+      // transition: all 0.3s ease-in-out;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      #{$th-direction}: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #{$primary-btn-bg-color};
+      border-radius: em(33);
+      z-index: -2;
+      transition: all .3s;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      #{$th-direction}: 0;
+      width: 0%;
+      height: 100%;
+      // background-color: darken($color, 15%);
+      background-color: #{$primary-btn-bg-hcolor};
+      border-radius: em(33);
+      z-index: -1;
+      transition: all .3s;
+    }
+
+    &:hover {
+      // color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+
+  &--small {
+    // font-size: em(16);
+    // line-height: em(30);
+    font-size: em(16);
+    line-height: 30px;
+    letter-spacing: em(0.03125);
+
+    // height: em(30);
+    height: 30px;
+    // width: em(159);
+
+
+    @media (max-width: 1025x) {
+      font-size: 16px;
+    }
+
+
+  }
+
+  &--medium {}
+
+  &--large {}
+
+  &.form-btn {
+    background: #{$form-button-bg};
+    border-radius: 10px;
+    width: 100%;
+    height: 46px;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 46px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #{$form-button-txt};
+    text-transform: capitalize;
+    padding: 0;
+    transition: all .5s;
+    // &::before,
+    // &::after{
+    //   content: '';
+    //   position: absolute;
+    //   #{$th-direction}: 0;
+    //   top: 0;
+    //   #{$th-opdirection}: 0;
+    //   bottom: 0;
+    //   height: 100%;
+    //   background: #259f6c; /* onhover background color */
+    //   z-index: -1;
+    //   transform: translate3D(0,-100%,0); /* move elements above button so they don't appear initially */
+    //   transition: all .5s;
+    // }
+    // &::before{
+    //   background: #fafcd6; /* button default background color */
+    //   z-index: -2;
+    //   transform: translate3D(0,0,0);
+    // }
+    
+    &:hover{
+      color: #000;
+      background: #FFF;
+      transition: all .5s;
+      &::after{
+        transform: translate3D(0,0,0);
+        transition: all .5s;
+      }
+    }
+    span {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 34px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #{$form-button-txt};
+      text-transform: capitalize;
+    }
+  }
+
+  &.txt-circle-btn {
+    span {}
+  }
+
+  /*
+  <a href="javascript:;" class="btn btn--seconday animate" data-animation="animate__fadeInUp" data-duration="500">
+    <span>Find Out More</span>
+    <svg width="13px" height="10px" viewBox="0 0 13 10">
+      <path d="M1,5 L11,5"></path>
+      <polyline points="8 1 12 5 8 9"></polyline>
+    </svg>
+  </a>
+  */
+
+  &--seconday {
+    $color: #111;
+    $primary: #FFAB9D;
+    position: relative;
+    margin: auto;
+    padding: 19px 22px;
+    transition: all .2s ease;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      #{$th-direction}: 0;
+      display: block;
+      border-radius: 28px;
+      background: rgba(222, 36, 74, 0.5);
+      width: 56px;
+      height: 56px;
+      transition: all .3s ease;
+    }
+    span {
+      position: relative;
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 900;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+    svg {
+      position: relative;
+      top: 0;
+      margin-#{$th-direction}: 10px;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: $color;
+      stroke-width: 2;
+      transform: translateX(-5px);
+      transition: all .3s ease;
+    }
+    &:hover {
+      &:before {
+        width: 100%;
+        background: rgba(222, 36, 74,1);
+      }
+      svg {
+        transform: translateX(0);
+      }
+    }
+    &:active {
+      transform: scale(.96);
+    }
+  }
+  
+}
+
+//
+.buttonfx {
+  color: black; /* button text color */
+  outline: none;
+  background: black;
+  border: none;
+  // border-bottom: 0px solid #eee;
+  letter-spacing: 0.0625em;
+  padding: 8px 10px; 
+  text-transform: uppercase;
+  font: bold 16px 'Bitter', sans-serif; /* use google font */
+  line-height: 2;
+  position: relative;
+  display: inline-block;
+  margin-#{$th-opdirection}: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  text-decoration: none; /* remove underline if using A instead of BUTTON tag */
+  overflow: hidden;
+  transition: all .5s;
+
+  /* //// Default effect: Slide from Top  //// */
+  &::before,
+  &::after{
+    content: '';
+    position: absolute;
+    #{$th-direction}: 0;
+    top: 0;
+    #{$th-opdirection}: 0;
+    bottom: 0;
+    height: 100%;
+    background: #259f6c; /* onhover background color */
+    z-index: -1;
+    transform: translate3D(0,-100%,0); /* move elements above button so they don't appear initially */
+    transition: all .5s;
+  }
+
+  &:before{
+    background: #fafcd6; /* button default background color */
+    z-index: -2;
+    transform: translate3D(0,0,0);
+  }
+
+  &:hover{
+    color: white;
+    &::after{
+      transform: translate3D(0,0,0);
+      transition: all .5s;
+    }
+  }
+
+  /* //// Slide Left  //// */  
+  &.slideleft {
+    &::after{
+      top: 0;
+      z-index: -1;
+      transform: translate3D(-101%,0,0);
+    }
+    &:hover {
+      &::after{
+        transform: translate3D(0,0,0);
+        transition: all .5s;
+      }
+    }
+  }
+
+  /* //// Slide Corner  //// */
+  &.slidebottomleft {
+    &::after{
+      transform: translate3D(-100%,100%,0);
+    }
+    &:hover {
+      &::after{
+        transform: translate3D(0,0,0);
+        transition: all .5s;
+      }
+    }
+  }
+
+  /* //// Angle In  //// */
+  &.angleinleft {
+    &::after{
+      width: 200%;
+      transform-origin: 0 bottom;
+      transform: translate3D(-50%,0,0) rotate(-50deg);
+    }
+    &:hover {
+      &::after{
+        transform: rotate(0deg);
+        transition: all .5s;
+      }
+    }
+  }
+
+  /* //// Curtain Down  //// */  
+  &.curtaindown {
+    border: 1px solid #eee;
+    border-bottom: 4px solid #eee;
+
+    &::before,
+    &::after{
+      background: #259f6c;
+      transform: translate3D(0,-100%,0);
+    }
+
+    &::after{
+      transform: translate3D(0,100%,0);
+    }
+
+    &:hover {
+      &::before,
+      &::after{
+        transform: translate3D(0,-50%,0);
+        transition: all .5s;
+      }
+
+      &::after{
+        transform: translate3D(0,50%,0);
+      }
+    }
+  }
+
+  /* //// Curtain Up  //// */  
+  &.curtainup{
+    transform-style: preserve-3d;
+
+    &::before,
+    &::after{
+      transform-origin: center center;
+      transform: scale(1,0);
+    }
+
+    &:hover {
+      &::before,
+      &::after{
+        transform: scale(1);
+        border-radius: 0;
+      }
+    }
+
+  }
+
+  /* //// Double Angle In  //// */
+  &.angleindouble {
+    border: 1px solid #eee;
+    border-bottom: 4px solid #eee;
+
+    &::before{
+      top: 0;
+      #{$th-direction}: 0;
+      width: 150%;
+      background: #259f6c;
+      transform-origin: 0 bottom;
+      transform:  translateX(-100%) rotate(-30deg);
+    }
+
+    &::after{
+      top: 0;
+      #{$th-direction}: auto;
+      #{$th-opdirection}: 0;
+      width: 150%;
+      transform-origin: #{$th-opdirection} bottom;
+      transform: translateX(100%) rotate(30deg);
+    }
+
+    &:hover {
+      &::before{
+        #{$th-direction}: 0;
+        transform: rotate(0deg);
+        transition: all .5s;
+      }
+      &::after{
+        #{$th-opdirection}: 0;
+        transform: rotate(0deg);
+        transition: all .5s;
+      }
+    }
+  }
+
+  /* //// Double Take  //// */
+  &.doubletake {
+    &::before,
+    &::after{
+      width: 200%;
+      background: #259f6c;
+      transform-origin: 0 bottom;
+      transform: translate3D(-50%,0,0) rotate(-50deg);
+    }
+
+    &::before{
+      opacity: .4;
+    }
+
+    &:hover {
+      &::before,
+      &::after{
+        transform: rotate(0deg);
+        transition: all .25s;
+      }
+      &::after{
+        transition-delay: .25s;
+      }
+    }
+
+  }
+
+  /* #### Bounce classes #### */
+  .bouncein {
+    &:hover {
+      &::before,
+      &::after{
+        transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66) !important;
+      }
+    }
+  }
+}
+
+
+.animated-arrow {
+  width: 100%;
+  // padding: 74px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  &--overlap {
+    position: absolute;
+    bottom: -35px;    
+    #{$th-direction}: 0;
+    z-index: 29;
+    @media (min-width: 1920px) {
+      // bottom: -90px;
+      bottom: -115px;
+      position: absolute !important;
+      bottom: -35px;
+    }
+  }
+
+  &--outer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    width: 100%;
+    // animation: jumpInfinite 1.5s infinite;
+  }
+
+  &--btn {
+    width: 71px;
+    height: 71px;
+    background: #{$animated-btn-bg};
+    border-radius: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    i {
+      // font-size: 24px;
+      // color: #FFFFFF;
+    }
+    img {
+      animation: jumpInfinite 1.5s infinite;
+    }
+  }
+
+  @keyframes jumpInfinite {
+    0% {
+      margin-top: 0;
+    }
+
+    50% {
+      margin-top: 20px;
+    }
+
+    100% {
+      margin-top: 0;
+    }
+  }
+}

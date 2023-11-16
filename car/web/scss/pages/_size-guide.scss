@@ -1,0 +1,50 @@
+.size-guide-box {
+    // padding: em(100) em(45);
+    padding: 8.3333em 3.75em;
+    @media (max-width : 767px) {
+        padding: 50px 25px;
+    }
+    .card {
+        @media (max-width : 767px) {
+            // padding-bottom: 25px;
+        }
+        .card-img {
+            position: relative;
+            img {
+                width: 100%;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                #{$th-direction} : 0;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.1);
+            }
+        }
+        .card-body {
+            padding: 3.25em 1em 0;
+            @media (max-width : 767px) {
+                padding: 3.25em 1em;
+            }
+            .card-title {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 2.916em;
+                line-height: 1.17em;
+                color: #{$primary-color};
+                text-align: center;
+            }
+            .card-text {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 1.33em;
+                line-height: 1.375em;
+                text-align: center;
+                color: #{$theme-color-third};
+            }
+        }
+    }
+}

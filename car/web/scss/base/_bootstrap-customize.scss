@@ -1,0 +1,89 @@
+// Required
+@import "../../../node_modules/bootstrap/scss/functions";
+
+// Container Size
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+);
+
+$theme-colors: (
+    "primary"           : $primary-color,
+    "danger"            : #ff4136
+);
+
+$theme-font-sizes: (
+    "fs-one"              : 60px,
+    "fs-two"              : 80px,
+    "fs-three"            : 45px,
+    "fs-four"             : 35px,
+    "fs-five"              : 30px,
+    "fs-six"               : 28px,
+    "fs-seven"           : 18px,
+    "fs-eight"              : 16px,
+    "fs-nine"               : 14px,
+);
+
+.list-group {
+    &.custom-list {
+        li {
+            position: relative;
+            padding-#{$th-direction}: em(35);
+            margin-bottom: em(15);
+            min-height: em(25);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            font-size: em(14);
+
+            &:last-child,
+            &:only-child {
+                margin-bottom: 0px;
+            }
+
+            @media (max-width : 1366px) {
+                padding-#{$th-direction}: 35px;
+                margin-bottom: 15px;
+                font-size: 14px;
+                min-height: 25px;
+            }
+
+            &::before {
+                content: '';
+                width: em(25);
+                height: em(25);
+                position: absolute;
+                #{$th-direction}: 0;
+                top: 0;
+                border: em(2) solid #{$primary-color};
+                border-radius: 100%;
+                @media (max-width : 1366px) {
+                    width: 25px;
+                    height: 25px;
+                    border: 2px solid #{$primary-color};
+                }
+            }
+
+            &::after {
+                content: '';
+                width: em(10);
+                height: em(10);
+                background-color: #{$primary-color};
+                position: absolute;
+                #{$th-direction}: em(7.5);
+                top: em(7.5);
+                border-radius: 100%;
+                @media (max-width : 1366px) {
+                    width:10px;
+                    height: 10px;
+                    #{$th-direction}: 7.5px;
+                    top: 7.5px;
+                }
+            }
+        }
+    }
+}

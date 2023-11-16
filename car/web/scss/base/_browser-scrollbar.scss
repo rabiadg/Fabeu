@@ -1,0 +1,36 @@
+/* Chrome safari scrolbar */
+::-webkit-scrollbar {
+    width: 5px;
+    // height: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @include border-radius(5px);
+    // background: rgba(111, 68, 182, 0.3);
+    background: $scrollbar-thumb-color;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @include border-radius(5px);
+    // background: rgba(111, 68, 182, 0.1);
+    background: $webkit-scrollbar-track-color;
+  }
+  
+  /* scrollabr */
+  .mCSB_scrollTools .mCSB_draggerRail {
+    background-color: $background-color;
+  }
+  
+  .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #e6def3;
+    background-color: $background-color-light;
+  }
+  
+  .mCSB_inside > .mCSB_container {
+    margin-#{$th-opdirection}: 0;
+  }
+  
+  .mCSB_scrollTools {
+    width: 3px;
+    #{$th-opdirection}: 5px;
+  }

@@ -1,0 +1,114 @@
+.contact-main {
+    .spacing-left {
+        padding-top: 22%;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 992px) {
+            padding-top: 5em;
+        }
+
+        .form-wrapper {
+            background: #ededed;
+            padding: 3.833em 3.833em;
+            width: 100%;
+            max-width: 39.33em;
+
+            @media (max-width: 1366px) {
+                max-width: 33.33em;
+            }
+
+            @media (max-width: 992px) {
+                margin-bottom: 5em;
+            }
+
+            h1 {
+                font-size: 1.833em;
+                font-weight: 500;
+                margin: 0 0 1.5em 0;
+            }
+
+            p {
+                margin: 0 0 1.5em 0;
+                color: #000;
+                max-width: 90%;
+            }
+
+            .form-group {
+                margin-bottom: 1.8333em;
+            }
+
+            button {
+                border-radius: 0.416em;
+            }
+        }
+    }
+
+    .contact-right {
+        background: #EDEDED;
+        padding: 2.5em 0 14.166em 0;
+
+        @media (max-width: 992px) {
+            padding: 3em;
+        }
+
+
+        .contact-info {
+            // padding-top: 7.5em;
+            padding-top: 2em;
+
+            ul {
+                display: flex;
+                justify-content: space-evenly;
+                list-style: none;
+                padding:  0 50px!important;
+
+                @media (max-width : 991px) {
+                    padding: 0!important;
+                    width: 100%;
+                }
+
+                @media (max-width: 767px) {
+                    flex-direction: column;
+                }
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    @media (max-width: 1366px) {
+                        font-size: 12px;
+                    }
+                    @media (max-width : 991px) {
+                        padding-#{$th-direction}: 0px;
+                    }
+                    &::before{
+                        display: none;
+                        visibility: hidden;
+                    }
+                    div,
+                    span {
+                        margin-#{$th-opdirection}: 1.25em;
+                        width: 26px;
+                        img {
+                            object-fit: contain;
+                        }
+                    }
+
+                    a {
+                        font-style: normal;
+                        font-weight: 400;
+                        // font-size: 14px;
+                        // line-height: 17px;
+                        color: #{$theme-color-third}!important;
+                        &:hover {
+                            color: #{$primary-color}!important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

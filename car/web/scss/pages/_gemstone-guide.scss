@@ -1,0 +1,14 @@
+
+
+
+.gemstone-guide-page {
+    .fabeo-solitaire-text-content {
+        &__title {
+            font-size: 2.166em; 
+            // line-height: 1.153em;
+            line-height: 1em!important;
+            margin-bottom: 2em;
+            padding-#{$th-direction}: 0.769em;
+        }
+    }
+}

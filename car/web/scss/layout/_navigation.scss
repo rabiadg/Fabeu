@@ -1,0 +1,19 @@
+.mp-header {
+    ul {
+        &.groupmenu {
+            li {
+                &.item {
+                    &.level0 {
+                        .item {
+                            &.level1 {
+                                &.text-content {
+                                    padding-bottom: 20px!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

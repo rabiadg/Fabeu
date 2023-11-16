@@ -1,0 +1,304 @@
+body {
+    &.catalog-product-view {
+        .product-info-main {
+            .page-title-wrapper {
+                .wk-seller-shop-title {
+                    display: flex;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    margin-top: 15px;
+                    a {
+                        max-width: calc(100% - 120px);
+                        display: flex;
+                        flex-wrap: wrap;
+                        line-height: normal;
+                    }
+                }
+                .product-shop-img-detail {
+                    width: 75px;
+                    display: flex;
+                    margin-left: 10px;
+                    flex-wrap: wrap;
+                    border: 1px solid #a1a1a1;
+                    border-style: dashed;
+                    height: 75px;
+                    padding: 2.5px;
+                    a {
+                        display: block;
+                        width: 100%;
+                        max-width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        .attributues-box-outer {
+            .attributues-row {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .attributues-box {
+                margin-bottom: 50px;
+            }
+        }
+
+        .product-info-main {
+            .product {
+                &.attribute,
+                &.attibute {
+                    &.overview {
+                        margin-bottom: 15px;
+                        .title {
+                            margin-bottom: 15px;
+                            .type {
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+                        }
+                        .value {
+                            p {
+                                font-size: 14px;
+                                line-height: 21px;
+                                @media (max-width : 767px) {
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .product {
+            &.info.detailed {
+                &:not(.without_tab) {
+                    box-shadow : none;
+                    @media (min-width: 768px) {
+                        margin-bottom: 0px;
+                    }
+                    .product {
+                        &.data {
+                            &.items {
+                                .data {
+                                    &.item {
+                                        &.title {
+                                            a {
+                                                color: #000;
+                                            }
+                                            &:hover {
+                                                background: #2e95b4;
+                                                a {
+                                                    color: #FFF;
+                                                    &:hover {
+                                                        &::before {
+                                                            display: none;
+                                                            visibility: hidden;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            &.active {
+                                                background: #2e95b4;
+                                                a {
+                                                    color: #FFF;
+                                                    padding: 0 15px;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    &::before {
+                                                        display: none;
+                                                        visibility: hidden;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        &.content {
+                                            padding: 20px 0;
+                                            .value {
+                                                p {
+                                                    font-size: 13px;
+                                                    line-height: 20px;
+                                                }
+                                            }
+                                            h1 {
+                                                // width: 33.33%;
+                                            }
+                                            h3 {
+                                                // width: 33.33%;
+                                            }
+                                            .review-add {
+                                                .review-fieldset {
+                                                    .review-legend {
+                                                        display: flex;
+                                                        flex-wrap: wrap;
+                                                        margin-bottom: 15px;
+                                                        text-transform: none;
+                                                        span {
+                                                            font-size: 16px;
+                                                            padding-right: 10px;
+                                                        }
+                                                        strong {
+                                                            padding-top: 0px;
+                                                            font-size: 16px;
+                                                        }
+                                                    }
+                                                    .review-field-ratings {
+                                                        margin-bottom: 15px!important;
+                                                        .review-field-rating {
+                                                            display: flex;
+                                                            flex-wrap: wrap;
+                                                            .label {
+                                                                display: flex;
+                                                                justify-content: center;
+                                                                align-items: center;
+                                                            }
+                                                            .control {
+                                                                &.review-control-vote {
+                                                                    margin-left: 15px!important;
+                                                                    width: calc(100% - 55px);
+                                                                    display: flex;
+                                                                    height: 20px;
+                                                                    margin: 0;
+                                                                    &::before {
+                                                                        font-size: 20px;
+                                                                        line-height: 20px;
+                                                                        height: 20px;
+                                                                    }
+                                                                    label {
+                                                                        &::before {
+                                                                            font-size: 20px;
+                                                                            line-height: 20px;
+                                                                            height: 20px;
+                                                                        }
+                                                                        &:hover {
+                                                                            &::before {
+                                                                                font-size: 20px;
+                                                                                line-height: 20px;
+                                                                                height: 20px;
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    .review-field-nickname {
+                                                        @media (min-width: 768px) {
+                                                            width: 50%;
+                                                            padding-right: 15px;
+                                                        }
+                                                    }
+                                                    .review-field-summary {
+                                                        @media (min-width: 768px) {
+                                                            width: 50%;
+                                                            padding-left: 15px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .table-wrapper {
+            .table {
+                &:not(.totals) {
+                    &:not(.cart) {
+                        &:not(.table-comparison) {
+                            & > tbody {
+                                & > tr {
+                                    @media only screen and (max-width: 639px) {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        align-content: flex-start;
+                                        justify-content: flex-start;
+                                        align-items: flex-start;
+                                        margin-bottom: 15px;
+                                    }
+                                    & > td {
+                                        &:first-child {
+                                            @media only screen and (max-width: 639px) {
+                                                width: 45%;
+                                                display: flex;
+                                                flex-wrap: wrap;
+                                                padding: 0 0px;
+                                            }
+                                        }
+                                        &:last-child {
+                                            @media only screen and (max-width: 639px) {
+                                                width: 55%;
+                                                display: flex;
+                                                flex-wrap: wrap;
+                                                padding: 0 0px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .fab-product-detail {
+            #tabB {
+                .wk-seller-card-container {
+                    @media only screen and (max-width: 768px) {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                    @media only screen and (min-width: 768px) {
+                        display: flex;
+                        flex-wrap: wrap;
+                        margin: 0;
+                    }
+                    .wk-seller-card-row {
+                        @media only screen and (max-width: 768px) {
+                            width: 50%;
+                        }
+                        @media only screen and (min-width: 768px) {
+                            width: auto!important;
+                            // max-width: calc(25% - 25px);
+                            padding: 0;
+                            margin: 0;
+                            margin-right: 25px;
+                            height: 50px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-content: center;
+                            &:nth-child(3),
+                            &:nth-child(4) {
+                                width: 100%!important;
+                            }
+                        }
+                        .wk-ask-question-link {
+                            @media only screen and (max-width: 768px) {
+                                height: 100%;
+                                a {
+                                    @media only screen and (max-width: 768px) {
+                                        height: 100%;
+                                        &::before {
+                                            height: 100%;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }    
+}

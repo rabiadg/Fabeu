@@ -1,0 +1,267 @@
+@use "sass:list";
+@use "sass:math";
+
+$browser-context: 16;
+
+@function em($pixels, $context: $browser-context) {
+    @return math.div($pixels, $context) * 1em;
+}
+
+// Required
+// @import "./node_modules/bootstrap/scss/functions";
+// @import "../../../../node_modules/bootstrap/scss/functions";
+
+// Container Size
+
+// $container-max-widths: (
+//     sm      :  540px,
+//     md      :  720px,
+//     lg      :  960px,
+//     xl      : 1140px,
+//     xxl     : 1545px
+// );
+
+// $theme-color                            : #{$rusty-red-color};
+$primary-color                          : #{$rusty-red-color} !default;     //  #DE244A;
+$theme-color-second                     : #{$white-color} !default;         //  #FFFFFF
+$theme-color-third                      : #{$black-color} !default;         //  #000000
+$theme-color-forth                      : #{$dark-charcoal-color} !default; //#303030;
+$theme-color-fifth                      : #{$space-cadet} !default;
+$theme-color-six                        : #{$dark-jungle-green} !default;   
+
+
+
+
+// $footer-heading-color                : #{$rich-electric-blue};
+$footer-heading-font-family             : #{$secondary-font};
+
+
+
+
+// Button Customization
+$btn-padding-y-lg                   : 2.1rem;
+$btn-padding-x-lg                   : 2.9rem;
+$btn-padding-y-sm                   : 1.5rem;
+$btn-padding-x-sm                   : 1.45rem;
+
+$btn-font-family                    : #{$secondary-font};
+$btn-border-radius-lg               : 0.5rem;
+
+$btn-font-size                      : 2rem;
+$btn-font-size-sm                   : 1.5rem;
+$btn-font-size-lg                   : 2rem; 
+$btn-line-height                    : 107%;
+
+$btn-link-hover-color               : #153040 ;
+
+// $btn-font-weight                    : normal;
+
+// $btn-padding-y:               $input-btn-padding-y;
+// $btn-padding-x:               $input-btn-padding-x;
+// $btn-font-family:             $input-btn-font-family;
+// $btn-font-size:               $input-btn-font-size;
+// $btn-line-height:             $input-btn-line-height;
+// $btn-white-space:             null; // Set to `nowrap` to prevent text wrapping
+
+// $btn-padding-y-sm:            $input-btn-padding-y-sm;
+// $btn-padding-x-sm:            $input-btn-padding-x-sm;
+// $btn-font-size-sm:            $input-btn-font-size-sm;
+
+// $btn-padding-y-lg:            $input-btn-padding-y-lg;
+// $btn-padding-x-lg:            $input-btn-padding-x-lg;
+// $btn-font-size-lg:            $input-btn-font-size-lg;
+
+// $btn-border-width:            $input-btn-border-width;
+
+// $btn-font-weight:             $font-weight-normal;
+// $btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075);
+// $btn-focus-width:             $input-btn-focus-width;
+// $btn-focus-box-shadow:        $input-btn-focus-box-shadow;
+// $btn-disabled-opacity:        .65;
+// $btn-active-box-shadow:       inset 0 3px 5px rgba($black, .125);
+
+// $btn-link-color:              $link-color;
+// $btn-link-hover-color:        $link-hover-color;
+// $btn-link-disabled-color:     $gray-600;
+
+// // Allows for customizing button radius independently from global border radius
+// $btn-border-radius:           $border-radius;
+// $btn-border-radius-sm:        $border-radius-sm;
+// $btn-border-radius-lg:        $border-radius-lg;
+
+// $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+// $btn-hover-bg-shade-amount:       15%;
+// $btn-hover-bg-tint-amount:        15%;
+// $btn-hover-border-shade-amount:   20%;
+// $btn-hover-border-tint-amount:    10%;
+// $btn-active-bg-shade-amount:      20%;
+// $btn-active-bg-tint-amount:       20%;
+// $btn-active-border-shade-amount:  25%;
+// $btn-active-border-tint-amount:   10%;
+
+
+$elarge-desktop-header-padding             : 4.5rem;
+$elarge-desktop-logo-width                 : 33.5rem;
+$elarge-desktop-logo-height                : 7.2rem;
+
+
+$large-desktop-header-padding              : 4.5rem;
+$large-desktop-logo-width                  : 33.5rem;
+$large-desktop-logo-height                 : 7.2rem;
+
+$desktop-header-padding                    : 4.5rem;
+$desktop-logo-width                        : 33.5rem;
+$desktop-logo-height                       : 7.2rem;
+
+
+$tablet-header-padding                     : 4.5rem;
+$tablet-logo-width                         : 33.5rem;
+$tablet-logo-height                        : 7.2rem;
+
+
+$mobile-header-padding                    : 4.5rem;
+$mobile-logo-width                        : 33.5rem;
+$mobile-logo-height                       : 7.2rem;
+
+
+/*
+    Accordion
+*/
+
+
+// $accordion-padding-y:                     1rem;
+// $accordion-padding-x:                     1.25rem;
+// $accordion-color:                         $body-color;
+// $accordion-bg:                            $body-bg;
+// $accordion-border-width:                  $border-width;
+// $accordion-border-color:                  rgba($black, .125);
+// $accordion-border-radius:                 $border-radius;
+// $accordion-inner-border-radius:           subtract($accordion-border-radius, $accordion-border-width);
+
+// $accordion-body-padding-y:                $accordion-padding-y;
+// $accordion-body-padding-x:                $accordion-padding-x;
+
+// $accordion-button-padding-y:              $accordion-padding-y;
+// $accordion-button-padding-x:              $accordion-padding-x;
+// $accordion-button-color:                  $accordion-color;
+// $accordion-button-bg:                     $accordion-bg;
+// $accordion-transition:                    $btn-transition, border-radius .15s ease;
+// $accordion-button-active-bg:              tint-color($component-active-bg, 90%);
+// $accordion-button-active-color:           shade-color($primary, 10%);
+
+// $accordion-button-focus-border-color:     $input-focus-border-color;
+// $accordion-button-focus-box-shadow:       $btn-focus-box-shadow;
+
+// $accordion-icon-width:                    1.25rem;
+// $accordion-icon-color:                    $accordion-color;
+// $accordion-icon-active-color:             $accordion-button-active-color;
+// $accordion-icon-transition:               transform .2s ease-in-out;
+// $accordion-icon-transform:                rotate(-180deg);
+
+// $accordion-button-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+// $accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+
+$accordion-bg                             : transparent;
+$accordion-border-width                   : 0;
+$accordion-border-color                   : #4EBCE2;
+$accordion-border-radius                  : 0; 
+
+
+$accordion-button-color                   : #4EBCE2;
+$accordion-button-active-color            : #4EBCE2;
+$accordion-button-bg                      : transparent;
+$accordion-button-active-bg               : transparent;
+$accordion-button-padding-y               : 3rem;
+$accordion-button-padding-x               : 0;
+
+$accordion-body-padding-y                 : 5rem;
+$accordion-body-padding-x                 : 0;
+
+$accordion-icon-width                     : 3rem;
+$accordion-icon-color                     : #4EBCE2;
+$accordion-icon-active-color              : #4EBCE2;
+
+$accordion-button-icon                    : url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#4EBCE2' class='bi bi-plus' viewBox='0 0 16 16'><path d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/></svg>");
+$accordion-button-active-icon             : url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#4EBCE2' class='bi bi-dash' viewBox='0 0 16 16'><path d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/></svg>");
+
+//  Project Variables
+
+//  Theme 
+$theme-bg-color                                 : #{$theme-color-six};
+
+//  Scrollbar Color
+$scrollbar-thumb-color                          : #{$primary-color};
+$webkit-scrollbar-track-color                   : #{$theme-color-forth};
+$background-color                               : #{$theme-color-six};
+$background-color-light                         : #{$theme-color-third};
+
+//  Heading Color
+$main-heading-color                             : #{$dark-charcoal-color};
+$second-heading-color                           : #{$theme-color-third};
+$third-heading-color                            : #{$theme-color-second};
+$small-heading-color-txt                            : #{$primary-color};
+
+//  Image Caption
+$img-caption-txt-color                          : #{$theme-color-third};
+$img-overly-txt-color                           : #{$theme-color-second};
+$img-caption-txt-wo-color                       : rgba(0, 0, 0, 0.5);
+
+//  Background
+$loader-bg-color                                : #{$theme-color-second};
+
+//  Button
+$primary-btn-bg-color                           : #{$primary-color};
+$primary-btn-txt-color                          : #{$theme-color-second};
+$primary-btn-bg-hcolor                           : #{$theme-color-third};
+
+$form-button-bg                                 : #333;
+$form-button-txt                                : #{$theme-color-second};
+
+$txt-btn-circle-bg                              : #{$primary-color};
+
+//  Text Color
+$primary-txt-color                              : #{$theme-color-third};
+$primary-txt-hcolor                             : #{$primary-color};
+
+$secondary-txt-color                            : #{$dark-charcoal-color};
+
+$third-txt-color                                : #{$theme-color-second};
+$third-txt-hcolor                               : #{$primary-color};
+
+$forth-txt-color                                : #{$theme-color-forth};
+
+//  Form Box
+$form-box-bg                                    : #{$primary-color};
+$form-box-heading-color                         : #{$theme-color-second};
+$input-field-bg                                 : #{$theme-color-second};
+$input-placeholder-color                        : #{$theme-color-fifth};
+// $input-placeholder-color                     : #{$theme-color-six};
+
+//  Aninmated btn
+$animated-btn-bg                                : #{$primary-color};
+
+//  Swiper Slider
+$swiper-pagination-bullet-active-color          : #{$primary-color};
+$swiper-pagination-bullet-space                 : 5px;
+$swiper-vertical-tab-active-txt-color           : #{$theme-color-forth};
+
+
+//  Social Media link BG
+
+$social-media-bg                                : rgba(255, 255, 255, 0.12);
+$social-media-hbg                               : #{$theme-color-second};
+
+//  Footer
+$footer-link-color                              : #{$theme-color-second};
+
+//  Address 
+$address-txt-color                              : #{$theme-color-second};
+
+//  Listing Box text Color
+$list-box-heading-color                         : #{$theme-color-third};
+$list-box-txt-color                             : #{$theme-color-third};
+
+
+
+$main-top-space : 0px;

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../vendor/magento/framework/Module/etc/module.xsd">
+  <head>
+    <!-- <css src="css/style-en.css" /> -->
+    <css src="css/fabeu.css" />
+    <css src="css/custom.min.css" />
+    <css src="css/fabeu.min.css" />
+    <!-- <script src="js/jquery.min.js"/> -->
+    <script src="js/custom.js"/>
+  </head>
+</page>

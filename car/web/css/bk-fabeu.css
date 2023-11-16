@@ -1,0 +1,18 @@
+.cms-page-view .sidebar-additional .block{
+    display: none;
+}
+#cms-block-131{
+    display: none;
+}
+.cms-page-view .sidebar-additional #cms-block-131{
+    display: block;
+}
+#switcher-currency-trigger{
+    display: none !important;
+}
+.welcome{
+    display: none !important;
+}
+
+
+

@@ -1,0 +1,38 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magento\Customer\Block\Form\Login\Info $block */
+?>
+<?php if ($block->getRegistration()->isAllowed()) : ?>
+    <?php
+    $title = 'New Customers';
+    $desc = 'Creating an account has many benefits: check out faster, keep more than one address, track orders and more.';
+    $button_title = 'Create an Account';
+    $register_url = $block->getCreateAccountUrl();
+    $url = explode('/', $block->getRequest()->getUriString());
+    if (isset($url[3]) and $url[3] == 'marketplace') {
+        $title = "Sell With Us";
+        $desc = "We are Largest growing community to sell online, come and join us.";
+        $button_title="Open A Marketplace Shop";
+        $register_url=$block->getCreateAccountUrl().'v/1';
+   }
+    ?>
+    <div class="block block-new-customer">
+        <div class="block-title">
+            <strong id="block-new-customer-heading" role="heading"
+                    aria-level="2"><?= $block->escapeHtml(__($title)) ?></strong>
+        </div>
+        <div class="block-content" aria-labelledby="block-new-customer-heading">
+            <p><?= $block->escapeHtml(__($desc)) ?></p>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <a href="<?= $block->escapeUrl($register_url) ?>"
+                       class="action create primary"><span><?= $block->escapeHtml(__($button_title)) ?></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,473 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none;
+  &:focus,
+  &:focus-within {
+    outline: none;
+  }
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth; /*For Smoth Scroll*/
+}
+
+body {
+
+  .page-header {
+      .panel {
+          &.wrapper {
+              .panel {
+                  &.header {
+                      @media (min-width: 768px) {
+                          width: 100%;
+                      }
+                  }
+              }
+          }
+      }
+  }
+
+  &.cms-about,
+  &.cms-bangle-size-guide-upload,
+  &.cms-buying-pricing,
+  &.cms-contact-us,
+  &.cms-diamond-guide,
+  &.cms-gemstone-guide,
+  &.cms-jewelry-care-guide,
+  &.cms-measure-ring-size-banner,
+  &.cms-our-story,
+  &.cms-solitaire-guide,
+  &.cms-customer-faq {
+    user-select: none;
+    font-family: $primary-font;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    counter-reset: my-sec-counter;
+    
+    img {
+      // max-width: 100%;
+      // width: auto;
+      // object-fit: cover;
+    }
+
+    //  Loadjs
+    .loadjs {
+        overflow: hidden;
+    }
+
+    //  Animate Box Hide when Load, then animate
+    .animate {
+        opacity: 0;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        position: relative;
+        padding: 0;
+        z-index: 2;
+    }
+
+    label {
+        &.error {
+            margin-top: 10px;
+            font-size: 11px;
+            color: #FFF;
+            width: 100%;
+            font-weight: normal;
+        }
+    }
+
+    main {
+      width: 100%;
+      margin-top: #{$main-top-space};
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 2.5%;
+
+        @media (max-width: 1600px) {
+            padding: 0 3%;
+        }
+
+        @media (max-width: 1480px) {
+            padding: 0 5%;
+        }
+
+        @media (max-width: 1200px) {
+            padding: 0 7%;
+        }
+
+        @media (max-width: 992px) {
+            padding: 0 5em;
+        }
+
+        @media (max-width: 767px) {
+            padding: 0 25px;
+        }
+    }
+
+    .page-wrapper {
+      .page-main {
+        width: 100%!important;
+        margin: 0;
+        padding: 0!important;
+        #contentarea {
+          display: none;
+          visibility: hidden;
+        }
+        .contentarea {
+          display: none;
+          visibility: hidden;
+        }
+        .page {
+          &.messages {
+            display: none;
+            visibility: hidden;
+          }
+        }
+        .container {
+          margin-top: 0;
+          display: none;
+          visibility: hidden;
+        }
+      }
+      main {
+        &.page-main {
+          width: 100%!important;
+          padding: 0!important;
+        }
+      }
+    }
+
+    #maincontent {
+      &.page-main {
+        width: 100%!important;
+        padding: 0!important; 
+      }
+    }
+    .new-product--section {
+      padding-top: 2em!important;
+    }
+  }
+
+  &.cms-need-help,
+  &.cms-faqs,
+  &.cms-testimonials {
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        position: relative;
+        padding: 0;
+        z-index: 2;
+    }
+
+    label {
+        &.error {
+            margin-top: 10px;
+            font-size: 11px;
+            color: #FFF;
+            width: 100%;
+            font-weight: normal;
+        }
+    }
+
+    main {
+        width: 100%;
+        margin-top: #{$main-top-space};
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 2.5%;
+
+        @media (max-width: 1600px) {
+            padding: 0 3%;
+        }
+
+        @media (max-width: 1480px) {
+            padding: 0 5%;
+        }
+
+        @media (max-width: 1200px) {
+            padding: 0 7%;
+        }
+
+        @media (max-width: 992px) {
+            padding: 0 5em;
+        }
+
+        @media (max-width: 767px) {
+            padding: 0 25px;
+        }
+    }
+
+    .page-wrapper {
+        .page-main {
+            width: 100% !important;
+            margin: 0;
+            padding: 0 !important;
+
+            #contentarea {
+                display: none;
+                visibility: hidden;
+            }
+
+            .contentarea {
+                display: none;
+                visibility: hidden;
+            }
+
+            .page {
+                &.messages {
+                    display: none;
+                    visibility: hidden;
+                }
+            }
+        }
+
+        main {
+            &.page-main {
+                width: 100% !important;
+                padding: 0 !important;
+            }
+        }
+    }
+
+    #maincontent {
+      &.page-main {
+        width: 100% !important;
+        padding: 0 !important;
+      }
+    }
+    .contentarea {
+        display: none;
+        visibility: hidden;
+    }
+
+    header {
+      @media (max-width : 1199px) {
+        // height: 14.5em;
+      }
+    }
+
+  }
+
+  &.cms-testimonials {
+    .container {
+      display: none;
+      visibility: hidden;
+    }
+
+    .testimonial-section {
+        .container {
+            display: block;
+            visibility: visible;
+        }
+    }
+
+  }
+
+  &.cms-need-help,
+  &.cms-faqs {
+    .container {
+      display: none;
+      visibility: hidden;
+    }
+    .need-help-section {
+      margin: 100px 0;
+      .container {
+        display: block;
+        visibility: visible;
+      }
+    }
+  }
+
+  #chatbox-component {
+    .chatbox-avatar {
+      img {
+        object-fit: unset;
+      }
+    }
+  }
+
+  &.customer-account-login,
+  &.customer-account-forgotpassword,
+  &.customer-account-create {
+    position: relative;
+
+    .page {
+      &.messages {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+      .messages {
+        .message {
+          padding-left: 65px;
+          & > *:first-child {
+            &::before {
+              #{$th-direction} : 15px;
+            }
+          }
+        }
+      }
+    }
+
+    .container {
+      display: none;
+      visibility: hidden;
+    }
+
+    .fieldset>.field,
+    .fieldset>.fields>.field {
+      margin: 0 0 15px!important;
+      .control {
+        flex-wrap: wrap;
+      }
+      .mage-error {
+        margin-bottom: 7px;
+      }
+    }
+
+    .block-register-account {
+      .block-content-register {
+        .field {
+          .label {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .fieldset {
+      margin: 0 0 15px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      & > .field {
+        & > .label {
+          margin: 0 0 5px!important;
+        }
+        & > .field {
+          & > .label {
+            margin: 0 0 5px!important;
+            font-weight: 600;
+            a {
+              font-weight: 600;
+            }
+          }
+          &.choice {
+            display: flex;
+            flex-wrap: wrap;
+            & > .label {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+      &.vendorfields {
+        margin: 30px 0 0;
+        .field {
+          .control {
+            display: flex;
+            flex-wrap: wrap;
+            input {
+              &:focus {
+                box-shadow: none;
+              }
+              &:not([disabled]):focus {
+                box-shadow: none;
+              }
+            }
+            textarea {
+              &:not([disabled]):focus {
+                box-shadow: none;
+              }
+            }
+            select {
+              &:not([disabled]):focus {
+                box-shadow: none;
+              }
+            }
+          }
+        }
+      }
+
+      .actions-toolbar {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    #password-strength-meter-container {
+      margin: 15px 0;
+    }
+
+    .privacy-container {
+      margin: 15px 0;
+      .checkbox-container {
+        display: flex;
+        flex-wrap: wrap;
+        label {
+          font-weight: 600;
+          a {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .captcha { 
+      margin-bottom : 0!important;
+      .control {
+        &.captcha {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .nested {
+          margin-top: 5px;
+          display: flex;
+          flex-wrap: wrap;
+        }
+        img {
+          &.captcha-img {
+            margin-bottom: 15px;
+          }
+        }
+      }
+      button {
+        margin-bottom: 0;
+      }
+    }
+
+    .block-content {
+      box-shadow : none!important;
+    }
+  }
+  &.customer-account-create {
+    .wkv_machinetoken,
+    #wkv_machinetoken {
+      display: none;
+    }
+  }
+}  

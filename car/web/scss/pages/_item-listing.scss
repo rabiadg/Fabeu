@@ -1,0 +1,22 @@
+body {
+    &.cms-page-view {
+        .page-main {
+            .item-rate-listing {
+                margin-bottom: 2em;
+                h3 {}
+                .date-box {
+                    font-size: 1em!important;
+                }
+            }
+
+            .tb-full-width {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .half-box {
+                width : 50%;
+            }
+        }
+    }
+}

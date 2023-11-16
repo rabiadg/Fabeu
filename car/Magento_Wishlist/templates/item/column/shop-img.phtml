@@ -1,0 +1,14 @@
+<?php
+/** @var \Magento\Wishlist\Block\Customer\Wishlist\Item\Column\Info $block */
+
+/** @var \Magento\Wishlist\Model\Item $item */
+$fabeuHelper = $this->helper(\Fabeu\Shop\Helper\Data::class);
+$item = $block->getItem();
+$product = $item->getProduct();
+$vendorlogo = $fabeuHelper->getVendorLogoByProductId($product->getId());
+$shopUrl = $fabeuHelper->getSellerShopUrlByProductId($product->getId());
+
+?>
+<div class="product-shop-img">
+    <a href="<?= $escaper->escapeUrl($shopUrl); ?>"> <img src="<?= $vendorlogo  ?>" alt="logo"></a>
+</div>

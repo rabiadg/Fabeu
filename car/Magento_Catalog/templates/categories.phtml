@@ -1,0 +1,27 @@
+<section class="mp-section section--shop-category">
+    <div class="mp-container">
+        <div class="twocol-row">
+            <?php
+            $categories = $block->getData('categories');
+            $categoryIds = explode(',', $categories);
+            foreach (array_slice($categoryIds, 0, 6) as $key => $categoryId) {
+
+                $_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                $category = $_objectManager->create('Magento\Catalog\Model\Category')->load($categoryId);
+
+                ?>
+                <div class="col-33">
+                    <div class="shop-category_box"><a href="<?php echo $category->getUrl(); ?>"><img src="<?php echo $category->getImageUrl(); ?>" alt=""></a>
+                        <a href="<?php echo $category->getUrl(); ?>">
+                            <div class="shop-category_title">
+                                <p><?php echo $category->getName(); ?></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+    </div>
+</section>
